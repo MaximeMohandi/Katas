@@ -1,0 +1,22 @@
+# .NET
+*.dll
+*.exe
+*.pdb
+
+# C#
+*.csproj
+*.sln
+*.dll
+*.exe
+*.pdb
+
+# TypeScript
+*.ts
+*.js
+*.map
+
+# JavaScript
+*.js
+*.map
+# Node.js
+node_modules/
