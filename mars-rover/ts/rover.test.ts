@@ -13,4 +13,10 @@ describe("rover initial state", () => {
 
     expect(rover.position).toEqual({ x: 0, y: 0 });
   });
+
+  it("should start at a given direction", () => {
+    const rover = new Rover({ x: 0, y: 0 });
+
+    expect(rover.direction).toEqual("N");
+  });
 });
