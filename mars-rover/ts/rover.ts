@@ -1,13 +1,12 @@
 type Position = { x: number; y: number };
 
+export type CardinalPoints = "N" | "S" | "E" | "W";
+
 export default class Rover {
   position: Position;
   direction: string;
 
-  constructor(position: Position, direction: string = "N") {
-    if (!["N", "S", "E", "W"].includes(direction)) {
-      throw new Error("Invalid direction");
-    }
+  constructor(position: Position, direction: CardinalPoints) {
     this.position = position;
     this.direction = direction;
   }
