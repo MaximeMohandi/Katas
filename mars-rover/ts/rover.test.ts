@@ -8,15 +8,10 @@ You are given the initial starting point (x,y) of a rover and the direction (N,S
 import Rover from "./rover";
 
 describe("rover initial state", () => {
-  it("should start at a given position", () => {
-    const rover = new Rover({ x: 0, y: 0 });
+  it("should start at a given position and direction", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "N");
 
     expect(rover.position).toEqual({ x: 0, y: 0 });
-  });
-
-  it("should start at a given direction", () => {
-    const rover = new Rover({ x: 0, y: 0 });
-
-    expect(rover.direction).toEqual("N");
+    expect(rover.direction).toBe("N");
   });
 });
