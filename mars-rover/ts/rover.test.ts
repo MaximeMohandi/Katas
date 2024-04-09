@@ -8,10 +8,18 @@ You are given the initial starting point (x,y) of a rover and the direction (N,S
 import Rover from "./rover";
 
 describe("rover initial state", () => {
-  it("should start at a given position and direction", () => {
-    const rover = new Rover({ x: 0, y: 0 }, "N");
+  test.each([
+    [{ x: 0, y: 0 }, "N"],
+    [{ x: 10, y: -4 }, "S"],
+    [{ x: -9, y: 0 }, "E"],
+    [{ x: 0, y: 0 }, "W"],
+  ])(
+    "should start at a given position %p and direction %p",
+    (position, direction) => {
+      const rover = new Rover(position, direction);
 
-    expect(rover.position).toEqual({ x: 0, y: 0 });
-    expect(rover.direction).toBe("N");
-  });
+      expect(rover.position).toEqual(position);
+      expect(rover.direction).toBe(direction);
+    }
+  );
 });
