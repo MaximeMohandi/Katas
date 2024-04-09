@@ -22,4 +22,8 @@ describe("rover initial state", () => {
       expect(rover.direction).toBe(direction);
     }
   );
+
+  test("should return error if direction is not a cardinal point", () => {
+    expect(() => new Rover({ x: 0, y: 0 }, "X")).toThrow("Invalid direction");
+  });
 });
