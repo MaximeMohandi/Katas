@@ -10,4 +10,10 @@ export default class Rover {
     this.position = position;
     this.direction = direction;
   }
+
+  receiveCommand(commands: string[]): boolean {
+    if (!Array.isArray(commands)) return false;
+
+    return true;
+  }
 }
