@@ -14,6 +14,8 @@ export default class Rover {
   receiveCommand(commands: string[]): boolean {
     if (!Array.isArray(commands)) return false;
 
+    if (!commands.every((command) => typeof command === "string")) return false;
+
     return true;
   }
 }

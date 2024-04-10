@@ -42,4 +42,10 @@ describe("rover command reception", () => {
 
     expect(rover.receiveCommand("test" as any)).toBe(false);
   });
+
+  test("should return false if command is not an array of string", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "N");
+
+    expect(rover.receiveCommand([1, 2, 3] as any)).toBe(false);
+  });
 });
