@@ -51,35 +51,19 @@ describe("rover command reception", () => {
 });
 
 describe("rover forward command movement", () => {
-  test("should move forward on y axis if direction is North", () => {
-    const rover = new Rover({ x: 0, y: 0 }, "N");
+  test.each([
+    ["N", { x: 0, y: 1 }],
+    ["S", { x: 0, y: -1 }],
+    ["E", { x: 1, y: 0 }],
+    ["W", { x: -1, y: 0 }],
+  ])(
+    "should move forward to the direction %s it's facing",
+    (direction, expectedPosition) => {
+      const rover = new Rover({ x: 0, y: 0 }, direction as CardinalPoints);
 
-    rover.receiveCommand(["f"]);
+      rover.receiveCommand(["f"]);
 
-    expect(rover.position).toEqual({ x: 0, y: 1 });
-  });
-
-  test("should move forward on y axis if direction is South", () => {
-    const rover = new Rover({ x: 0, y: 0 }, "S");
-
-    rover.receiveCommand(["f"]);
-
-    expect(rover.position).toEqual({ x: 0, y: -1 });
-  });
-
-  test("should move forward on y axis if direction is South", () => {
-    const rover = new Rover({ x: 0, y: 0 }, "E");
-
-    rover.receiveCommand(["f"]);
-
-    expect(rover.position).toEqual({ x: 1, y: 0 });
-  });
-
-  test("should move forward on y axis if direction is South", () => {
-    const rover = new Rover({ x: 0, y: 0 }, "W");
-
-    rover.receiveCommand(["f"]);
-
-    expect(rover.position).toEqual({ x: -1, y: 0 });
-  });
+      expect(rover.position).toEqual(expectedPosition);
+    }
+  );
 });
