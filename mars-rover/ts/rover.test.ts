@@ -66,4 +66,20 @@ describe("rover forward command movement", () => {
       expect(rover.position).toEqual(expectedPosition);
     }
   );
+
+  test.each([
+    ["N", { x: 0, y: -1 }],
+    ["S", { x: 0, y: 1 }],
+    ["E", { x: -1, y: 0 }],
+    ["W", { x: 1, y: 0 }],
+  ])(
+    "should move backward to the direction %s it's facing",
+    (direction, expectedPosition) => {
+      const rover = new Rover({ x: 0, y: 0 }, direction as CardinalPoints);
+
+      rover.receiveCommand(["b"]);
+
+      expect(rover.position).toEqual(expectedPosition);
+    }
+  );
 });

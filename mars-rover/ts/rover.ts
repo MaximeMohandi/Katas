@@ -18,6 +18,10 @@ export default class Rover {
       this.#moveForward();
     }
 
+    if (commands[0] === "b") {
+      this.#moveBackward();
+    }
+
     return true;
   }
 
@@ -43,6 +47,24 @@ export default class Rover {
 
     if (this.direction === "W") {
       this.position.x--;
+    }
+  };
+
+  #moveBackward = (): void => {
+    if (this.direction === "N") {
+      this.position.y--;
+    }
+
+    if (this.direction === "S") {
+      this.position.y++;
+    }
+
+    if (this.direction === "E") {
+      this.position.x--;
+    }
+
+    if (this.direction === "W") {
+      this.position.x++;
     }
   };
 }
