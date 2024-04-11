@@ -49,3 +49,13 @@ describe("rover command reception", () => {
     expect(rover.receiveCommand([1, 2, 3] as any)).toBe(false);
   });
 });
+
+describe("rover forward command movement", () => {
+  test("should move forward on y axis if direction is North", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "N");
+
+    rover.receiveCommand(["f"]);
+
+    expect(rover.position).toEqual({ x: 0, y: 1 });
+  });
+});
