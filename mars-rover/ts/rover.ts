@@ -14,14 +14,8 @@ export default class Rover {
   receiveCommand(commands: string[]): boolean {
     if (this.#isValidCommands(commands)) return false;
 
-    if (commands[0] === "f" && this.direction === "S") {
-      this.position.y--;
-    } else if (commands[0] === "f" && this.direction === "E") {
-      this.position.x++;
-    } else if (commands[0] === "f" && this.direction === "W") {
-      this.position.x--;
-    } else {
-      this.position.y++;
+    if (commands[0] === "f") {
+      this.#moveForward();
     }
 
     return true;
@@ -32,5 +26,23 @@ export default class Rover {
       !Array.isArray(commands) ||
       !commands.every((command) => typeof command === "string")
     );
+  };
+
+  #moveForward = (): void => {
+    if (this.direction === "N") {
+      this.position.y++;
+    }
+
+    if (this.direction === "S") {
+      this.position.y--;
+    }
+
+    if (this.direction === "E") {
+      this.position.x++;
+    }
+
+    if (this.direction === "W") {
+      this.position.x--;
+    }
   };
 }
