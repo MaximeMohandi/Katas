@@ -12,10 +12,15 @@ export default class Rover {
   }
 
   receiveCommand(commands: string[]): boolean {
-    if (!Array.isArray(commands)) return false;
-
-    if (!commands.every((command) => typeof command === "string")) return false;
+    if (this.#isValidCommands(commands)) return false;
 
     return true;
   }
+
+  #isValidCommands = (commands: string[]): boolean => {
+    return (
+      !Array.isArray(commands) ||
+      !commands.every((command) => typeof command === "string")
+    );
+  };
 }
