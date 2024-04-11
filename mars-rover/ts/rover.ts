@@ -6,8 +6,16 @@ export default class Rover {
   position: Position;
   direction: string;
 
-  constructor(position: Position, direction: CardinalPoints = "N") {
+  constructor(position: Position, direction: CardinalPoints) {
     this.position = position;
     this.direction = direction;
+  }
+
+  receiveCommand(commands: string[]): boolean {
+    if (!Array.isArray(commands)) return false;
+
+    if (!commands.every((command) => typeof command === "string")) return false;
+
+    return true;
   }
 }
