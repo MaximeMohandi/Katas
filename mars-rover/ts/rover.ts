@@ -18,6 +18,8 @@ export default class Rover {
       this.position.y--;
     } else if (commands[0] === "f" && this.direction === "E") {
       this.position.x++;
+    } else if (commands[0] === "f" && this.direction === "W") {
+      this.position.x--;
     } else {
       this.position.y++;
     }
