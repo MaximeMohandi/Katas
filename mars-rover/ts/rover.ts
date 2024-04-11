@@ -14,7 +14,13 @@ export default class Rover {
   receiveCommand(commands: string[]): boolean {
     if (this.#isValidCommands(commands)) return false;
 
-    if (commands[0] === "f") this.position.y++;
+    if (commands[0] === "f" && this.direction === "S") {
+      this.position.y--;
+    } else if (commands[0] === "f" && this.direction === "E") {
+      this.position.x++;
+    } else {
+      this.position.y++;
+    }
 
     return true;
   }

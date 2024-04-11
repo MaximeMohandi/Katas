@@ -58,4 +58,20 @@ describe("rover forward command movement", () => {
 
     expect(rover.position).toEqual({ x: 0, y: 1 });
   });
+
+  test("should move forward on y axis if direction is South", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "S");
+
+    rover.receiveCommand(["f"]);
+
+    expect(rover.position).toEqual({ x: 0, y: -1 });
+  });
+
+  test("should move forward on y axis if direction is South", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "E");
+
+    rover.receiveCommand(["f"]);
+
+    expect(rover.position).toEqual({ x: 1, y: 0 });
+  });
 });
