@@ -14,13 +14,15 @@ export default class Rover {
   receiveCommand(commands: string[]): boolean {
     if (this.#isValidCommands(commands)) return false;
 
-    if (commands[0] === "f") {
-      this.#moveForward();
-    }
+    commands.forEach((command) => {
+      if (command === "f") {
+        this.#moveForward();
+      }
 
-    if (commands[0] === "b") {
-      this.#moveBackward();
-    }
+      if (command === "b") {
+        this.#moveBackward();
+      }
+    });
 
     return true;
   }

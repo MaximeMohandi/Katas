@@ -82,4 +82,12 @@ describe("rover movement command", () => {
       expect(rover.position).toEqual(expectedPosition);
     }
   );
+
+  test("should move forward then 2 times backward", () => {
+    const rover = new Rover({ x: 0, y: 0 }, "N");
+
+    rover.receiveCommand(["f", "b", "b"]);
+
+    expect(rover.position).toEqual({ x: 0, y: -1 });
+  });
 });
