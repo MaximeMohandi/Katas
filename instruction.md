@@ -1,7 +1,7 @@
 # Roman Numerals
 
 Difficulty: easy
-see: (https://codingdojo.org/kata/RomanNumerals)[https://codingdojo.org/kata/RomanNumerals/]
+see: [https://codingdojo.org/kata/RomanNumerals](https://codingdojo.org/kata/RomanNumerals/)
 
 ## Description
 
