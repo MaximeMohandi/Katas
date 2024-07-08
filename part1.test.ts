@@ -15,12 +15,14 @@ test('should not be case sensitive', () => {
         expect(translateRomanNumber('i')).toBe(1);
 })
 
-test('should sum numerals when chained', () => {
-        expect(translateRomanNumber('ii')).toBe(2);
-})
+describe('should sum chained numeral', () => {
+        const cases = [['ii', 2], ['xxx', 30]]
+        test.each(cases)('%p should translate to %p',
+                (romanNumeralToTranslate, expectDecimal) => {
+                        expect(translateRomanNumber(romanNumeralToTranslate as string)).toBe(expectDecimal)
+                }
+        );
 
-test('should sum numerals when chained more than twice', () => {
-        expect(translateRomanNumber('XXX')).toBe(30);
 })
 
 test('Numeral can not be repeated more than 3 times', () => {
