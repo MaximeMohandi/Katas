@@ -5,18 +5,12 @@
  */
 import { translateRomanNumber } from '.'
 
-test('should convert I into 1', () => {
-        expect(translateRomanNumber('I')).toBe(1);
-})
+describe('should read the 7 roman numerals', () => {
+        const cases = [['I', 1], ['V', 5], ['X', 10], ['D', 50]];
 
-test('should convert V into 5', () => {
-        expect(translateRomanNumber('V')).toBe(5);
-})
-
-test('should convert X into 10', () => {
-        expect(translateRomanNumber('X')).toBe(10);
-})
-
-test('should convert D into 50', () => {
-        expect(translateRomanNumber('D')).toBe(50);
+        test.each(cases)('Should translate %s to %d',
+                (romanNumeralToTranslate, expectedDecimal) => {
+                        expect(translateRomanNumber(romanNumeralToTranslate as string)).toBe(expectedDecimal);
+                }
+        );
 })
