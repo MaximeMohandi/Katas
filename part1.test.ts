@@ -8,3 +8,7 @@ import {translateRomanNumber} from '.'
 test('should convert I into 1',() => {
 	expect(translateRomanNumber('I')).toBe(1);
 })
+
+test('should convert V into 5', () => {
+	expect(translateRomanNumber('V')).toBe(5);
+})
