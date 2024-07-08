@@ -16,7 +16,8 @@ test('should not be case sensitive', () => {
 })
 
 describe('should sum chained numeral', () => {
-        const cases = [['ii', 2], ['xxx', 30]]
+        const cases = [['ii', 2], ['xxx', 30], ['VII', 7]]
+
         test.each(cases)('%p should translate to %p',
                 (romanNumeralToTranslate, expectDecimal) => {
                         expect(translateRomanNumber(romanNumeralToTranslate as string)).toBe(expectDecimal)
