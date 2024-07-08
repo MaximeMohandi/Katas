@@ -15,4 +15,8 @@ test('should convert V into 5', () => {
 
 test('should convert X into 10', () => {
 	expect(translateRomanNumber('X')).toBe(10);
-})	
+})
+
+test('should convert D into 50', () => {
+	expect(translateRomanNumber('D')).toBe(50);
+})
