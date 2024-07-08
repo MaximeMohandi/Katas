@@ -1,9 +1,6 @@
-export function translateRomanNumber(romanNumber: string) {
-        if (romanNumber === "I") return 1;
+const ROMAN_NUMERALS: { [key: string]: number } = { "I": 1, "V": 5, "X": 10, "D": 50 };
 
-        if (romanNumber === "V") return 5;
+export function translateRomanNumber(romanNumber: string): number {
 
-        if (romanNumber === "X") return 10;
-
-        if (romanNumber === "D") return 50;
+        return ROMAN_NUMERALS[romanNumber];
 }
