@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs", // or "esnext" depending on your project setup
+    "target": "es6",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["*.ts"]
+}
