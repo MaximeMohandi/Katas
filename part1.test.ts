@@ -14,3 +14,7 @@ describe('should read the 7 roman numerals', () => {
                 }
         );
 })
+
+test('should not be case sensitive', () => {
+        expect(translateRomanNumber('i')).toBe(1);
+})
