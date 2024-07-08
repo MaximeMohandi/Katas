@@ -22,3 +22,7 @@ test('should sum numerals when chained', () => {
 test('should sum numerals when chained more than twice', () => {
         expect(translateRomanNumber('XXX')).toBe(30);
 })
+
+test('Numeral can not be repeated more than 3 times', () => {
+        expect(() => translateRomanNumber('xxxx')).toThrow('Numeral is repeated more than three time.');
+})
