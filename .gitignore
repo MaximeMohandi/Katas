@@ -12,3 +12,11 @@
 
 # Node.js
 node_modules/
+
+.idea/
+*.ncrunch
+*.user
+
+bin/
+Debug/
+obj/
