@@ -9,3 +9,4 @@ each branch in the repo is a kata attempt.
 ## Kata attempt
 
 * Roman numerals
+* Bowling game
